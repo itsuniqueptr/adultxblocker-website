@@ -67,12 +67,24 @@ Three places: `CNAME`, `robots.txt`, and `url:` in `_config.yml`. Everything els
 
 ## Local preview
 
-Optional — most changes are safe to push and look at. If you want it locally:
-
 ```
-bundle install
-bundle exec jekyll serve
+jekyll serve
 ```
 
-This needs Ruby 2.7 or newer. macOS ships 2.6, so `bundle install` will fail on
-the system Ruby; install a newer one (rbenv, or Homebrew's `ruby`) first.
+Then open http://127.0.0.1:4000. Edits to any page rebuild automatically —
+refresh to see them. `_config.yml` is the exception: changing it needs a
+restart.
+
+If `jekyll` isn't on your PATH, it was installed under the system Ruby's user
+gem directory:
+
+```
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+JEKYLL_NO_BUNDLER_REQUIRE=true jekyll serve
+```
+
+`JEKYLL_NO_BUNDLER_REQUIRE` is needed because the `Gemfile` here pins the
+`github-pages` gem, which needs Ruby 2.7+ — newer than the Ruby macOS ships. The
+Gemfile is what production uses; the flag tells the local Jekyll to ignore it.
+Installing a newer Ruby (rbenv, or Homebrew's `ruby`) lets you drop both lines
+and use `bundle exec jekyll serve` instead.

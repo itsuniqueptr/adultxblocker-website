@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adultxblocker.com/sitemap.xml
+# Only honoured at a domain root. On a project site it is inert — it starts
+# working when the custom domain does.
+Sitemap: https://itsuniqueptr.github.io/adultxblocker-website/sitemap.xml

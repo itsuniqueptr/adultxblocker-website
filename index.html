@@ -155,10 +155,10 @@ layout: default
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "{{ site.url }}/#org",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#org",
       "name": "AdultXBlocker",
-      "url": "{{ site.url }}/",
-      "logo": "{{ site.url }}{{ site.logo }}",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "logo": "{{ site.url }}{{ site.baseurl }}{{ site.logo }}",
       "email": "{{ site.email }}",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -169,7 +169,7 @@ layout: default
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "{{ site.url }}/#extension",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#extension",
       "name": "AdultXBlocker for Chrome",
       "description": "Sets up and locks iOS Screen Time from your browser, and keeps an encrypted backup of every passcode it generates.",
       "applicationCategory": "BrowserApplication",
@@ -177,12 +177,12 @@ layout: default
       "softwareVersion": "{{ site.extension_version }}",
       "url": "{{ site.store_url }}",
       "downloadUrl": "{{ site.store_url }}",
-      "publisher": { "@id": "{{ site.url }}/#org" },
+      "publisher": { "@id": "{{ site.url }}{{ site.baseurl }}/#org" },
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     },
     {
       "@type": "FAQPage",
-      "@id": "{{ site.url }}/#faq",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -213,7 +213,7 @@ layout: default
     },
     {
       "@type": "HowTo",
-      "@id": "{{ site.url }}/#howto",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#howto",
       "name": "How to block adult content on an iPhone with AdultXBlocker",
       "totalTime": "PT5M",
       "step": [
