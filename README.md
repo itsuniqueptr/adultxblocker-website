@@ -18,7 +18,6 @@ _posts/         one Markdown file per post
 styles.css      one stylesheet, all pages
 assets/         icon.png, og.png (social card), og.html (its source)
 robots.txt      allows everything, points at the sitemap
-CNAME           custom domain. Delete this file if not using adultxblocker.com
 ```
 
 `sitemap.xml` and `feed.xml` are **generated** — don't create them by hand.
@@ -51,10 +50,34 @@ FAQs are the `faqs:` list in that file's front matter. Each entry renders both
 the visible accordion item **and** the `FAQPage` structured data Google reads, so
 the two can't drift apart. Answers accept Markdown.
 
-## Changing the domain
+## Where the site is served from
 
-Three places: `CNAME`, `robots.txt`, and `url:` in `_config.yml`. Everything else
-— canonical tags, OG tags, sitemap, feed — derives from `url:`.
+Right now it's a GitHub Pages **project site**, so it lives at a sub-path:
+
+```
+https://itsuniqueptr.github.io/adultxblocker-website/
+```
+
+`baseurl` in `_config.yml` must match the repo name, or every stylesheet, link
+and canonical URL points at a path that doesn't exist. Rename the repo and that
+line has to change with it.
+
+### Switching to adultxblocker.com
+
+Three edits, in this order:
+
+1. `_config.yml` — `url: https://adultxblocker.com` and `baseurl: ""`
+2. Create a file named `CNAME` at the repo root containing one line:
+   `adultxblocker.com`
+3. `robots.txt` — update the `Sitemap:` line
+
+Then add the DNS records at your registrar, and set the custom domain under
+Settings → Pages. Everything else — canonical tags, OG tags, sitemap, feed,
+structured data — derives from `url` and `baseurl`.
+
+Don't commit `CNAME` before DNS resolves. Pages switches to the custom domain
+the moment that file appears, and until the records propagate the site is
+unreachable at *both* addresses.
 
 ## Regenerating the social card
 
@@ -68,10 +91,11 @@ Three places: `CNAME`, `robots.txt`, and `url:` in `_config.yml`. Everything els
 ## Local preview
 
 ```
-jekyll serve
+jekyll serve --baseurl ""
 ```
 
-Then open http://127.0.0.1:4000. Edits to any page rebuild automatically —
+Then open http://127.0.0.1:4000. The empty `--baseurl` keeps local URLs at the
+root; without it the local site sits under `/adultxblocker-website/` too. Edits to any page rebuild automatically —
 refresh to see them. `_config.yml` is the exception: changing it needs a
 restart.
 
@@ -80,7 +104,7 @@ gem directory:
 
 ```
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
-JEKYLL_NO_BUNDLER_REQUIRE=true jekyll serve
+JEKYLL_NO_BUNDLER_REQUIRE=true jekyll serve --baseurl ""
 ```
 
 `JEKYLL_NO_BUNDLER_REQUIRE` is needed because the `Gemfile` here pins the
