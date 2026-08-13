@@ -1,0 +1,45 @@
+# GitHub Pages runs Jekyll itself — nothing here needs installing to deploy.
+# The three plugins below are on Pages' built-in allowlist.
+
+title: AdultXBlocker
+tagline: Block adult content on iPhone with a passcode you never see
+description: >-
+  A free Chrome extension that sets up iOS Screen Time with a randomly generated
+  passcode you never see, backed up encrypted. Choose how many days the block
+  stays on — until they're up, it stays on.
+url: https://adultxblocker.com
+baseurl: ""
+lang: en
+logo: /assets/icon.png
+email: hello@adultXBlocker.com
+
+# Single source of truth. Changing the store listing or shipping a new version
+# is one edit here, not a search-and-replace across every page.
+store_url: https://chromewebstore.google.com/detail/ifpolpfgjkiholaophpmghikadlalpjo
+extension_version: "1.4.0"
+
+twitter:
+  card: summary_large_image
+
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+defaults:
+  - scope: { path: "" }
+    values:
+      image: /assets/og.png
+  - scope: { path: "", type: posts }
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  # The social card's source, not a page. Rendered to assets/og.png by hand.
+  - assets/og.html

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{%- comment -%}
+  jekyll-seo-tag emits the BlogPosting JSON-LD, title, canonical and OG tags
+  for this page from the post's front matter. Nothing to repeat here.
+{%- endcomment -%}
+<article class="wrap prose post">
+  <p class="eyebrow">
+    <a href="{{ '/blog/' | relative_url }}">Blog</a> ·
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+  </p>
+  <h1>{{ page.title }}</h1>
+  {%- if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+
+  {{ content }}
+
+  <div class="post-end">
+    <h2>Block it properly, once.</h2>
+    <p>AdultXBlocker sets up iOS Screen Time with a passcode you never see. Free, and it takes about five minutes.</p>
+    <a class="btn" href="{{ site.store_url }}" rel="noopener">Add to Chrome</a>
+  </div>
+</article>

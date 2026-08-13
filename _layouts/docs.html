@@ -1,0 +1,76 @@
+---
+layout: default
+---
+<div class="wrap docs">
+
+  {%- comment -%}
+    Built from the rendered h2s rather than a hand-kept list in front matter —
+    a TOC that can disagree with the page is worse than no TOC. kramdown gives
+    every heading an id, so this only has to read them.
+  {%- endcomment -%}
+  <aside class="toc" aria-label="On this page">
+    <p class="toc-h">On this page</p>
+    <nav id="toc-list"></nav>
+  </aside>
+
+  <article class="prose">
+    <p class="eyebrow">{{ page.eyebrow | default: 'Documentation' }}</p>
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {%- if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif -%}
+
+    {{ content }}
+
+    {%- if page.faqs %}
+    <h2 id="faqs">FAQs</h2>
+    <div class="faq">
+      {%- for item in page.faqs %}
+      <details{% if forloop.first %} open{% endif %}>
+        <summary>{{ item.q }}</summary>
+        <p>{{ item.a | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+      </details>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </article>
+</div>
+
+{%- if page.faqs %}
+{%- comment -%}
+  Same YAML list as the accordion above, so the answer Google indexes and the
+  answer on screen cannot drift apart.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in page.faqs %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | markdownify | strip_html | normalize_whitespace | strip | jsonify }} }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
+
+<script>
+// TOC from the headings that are actually on the page.
+(function () {
+  var list = document.getElementById('toc-list');
+  var heads = document.querySelectorAll('.prose h2[id]');
+  if (!list || !heads.length) return;
+  var ul = document.createElement('ul');
+  heads.forEach(function (h) {
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+  list.appendChild(ul);
+})();
+</script>

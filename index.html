@@ -1,0 +1,247 @@
+---
+layout: default
+---
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Chrome extension · Free</p>
+      <h1>You can't undo this. That's the point.</h1>
+      <p class="lede">AdultXBlocker sets up iOS Screen Time with a passcode you never see. Pick a number of days. Until they're up, the block stays on.</p>
+      <div class="hero-cta">
+        <a class="btn" href="{{ site.store_url }}" rel="noopener">Add to Chrome</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <p class="hero-note">Asks for storage. Not your tabs, history, or files.</p>
+    </div>
+
+    <div class="lock" role="group" aria-label="Example of a locked device">
+      <div class="lock-row"><span class="lock-k">Device</span><span class="lock-v">iPhone</span></div>
+      <div class="lock-row"><span class="lock-k">Status</span><span class="lock-v"><span class="dot" aria-hidden="true"></span>Locked</span></div>
+      <p class="count"><small>Unlocks in</small><span id="clock">20d 23h 14m 07s</span></p>
+      <div class="bar" role="img" aria-label="Sixty-eight percent of the lock elapsed"><i></i></div>
+      <div class="lock-foot"><span>Locked 30 Jul</span><span>30-day commitment</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2 id="how-h">Three steps, and then it's out of your hands.</h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step-n">Step 01</span>
+        <h3>Pick your days</h3>
+        <p>Seven days, thirty, ninety — you choose at the end, not the start. The clock begins the moment the device actually locks, so a setup you abandon on Tuesday doesn't quietly eat Wednesday.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">Step 02</span>
+        <h3>We generate a passcode you never see</h3>
+        <p>The extension makes a random Screen Time passcode, encrypts it, and backs it up <em>before</em> showing you anything. Then it plays the digits one keypad tap at a time, over thirty seconds.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">Step 03</span>
+        <h3>Type it in. Walk away.</h3>
+        <p>Restrictions go on and the passcode is gone from your screen and your head. Come back when the days are up and unlock it from your device list.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="products" aria-labelledby="products-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Products</p>
+      <h2 id="products-h">What we make.</h2>
+    </div>
+    <div class="products">
+      <article class="product">
+        <div class="product-top">
+          <span class="mark mark-lg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4">
+              <circle cx="12" cy="12" r="9"></circle><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"></line>
+            </svg>
+          </span>
+          <h3>AdultXBlocker for Chrome</h3>
+        </div>
+        <p>Sets up and locks iOS Screen Time from your browser, and keeps an encrypted backup of every passcode it generates.</p>
+        <ul class="product-meta">
+          <li class="tag">Free</li>
+          <li class="tag">v{{ site.extension_version }}</li>
+          <li class="tag">Chrome</li>
+        </ul>
+        <a class="btn" href="{{ site.store_url }}" rel="noopener">Add to Chrome</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="privacy" aria-labelledby="privacy-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What it does with your data</p>
+      <h2 id="privacy-h">Nothing you'd have to trust us about.</h2>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="facts">
+      <div class="fact">
+        <h3>Encrypted before the countdown</h3>
+        <p>Your passcode is encrypted and saved on our server before the first digit is ever shown to you. If the setup is interrupted, the backup already exists.</p>
+      </div>
+      <div class="fact">
+        <h3>No browsing data</h3>
+        <p>The extension requests one permission: storage. Not your tabs, not your history, not Drive, not your files.</p>
+      </div>
+      <div class="fact">
+        <h3>Every device, listed</h3>
+        <p>See each device you've locked and exactly how long is left. Extend a lock whenever you want. The countdown is the only thing that shortens it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Common questions</p>
+      <h2 id="faq-h">Before you install it.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>What happens if I lose the passcode?</summary>
+        <p>You never had it. It's generated, encrypted, and backed up to your account before it's shown, and it's only ever shown as one keypad tap at a time. Recovering it is a normal, expected thing to do — not an emergency.</p>
+      </details>
+      <details>
+        <summary>Does this work on Android or Windows?</summary>
+        <p>Not today. AdultXBlocker walks you through iOS Screen Time, so the device being locked is an iPhone or iPad. The extension itself runs in Chrome on any desktop.</p>
+      </details>
+      <details>
+        <summary>What if I close the popup halfway through setup?</summary>
+        <p>Chrome destroys extension popups whenever they lose focus, so the setup is cached and picks up where it left off. A device left mid-setup shows as Pending in your list and can be resumed days later.</p>
+      </details>
+      <details>
+        <summary>Do I need an account?</summary>
+        <p>Yes — a verified email and password. That account is what the encrypted passcode backup belongs to, and it's what lets you see your devices from a different computer.</p>
+      </details>
+      <details>
+        <summary>What data does the extension collect?</summary>
+        <p>One Chrome permission: storage. It never asks for your tabs, your browsing history, Google Drive, or access to your files. <a href="{{ '/docs/' | relative_url }}">Read the full docs</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="close" aria-labelledby="close-h">
+    <p class="eyebrow">Free · Chrome</p>
+    <h2 id="close-h">Decide once, while you still want to.</h2>
+    <p class="lede">Set it up in about five minutes. The next five minutes are the only ones where changing your mind is easy.</p>
+    <a class="btn" href="{{ site.store_url }}" rel="noopener">Add to Chrome</a>
+  </section>
+</div>
+
+{%- comment -%}
+  jekyll-seo-tag already emits the title, canonical, OG/Twitter tags and the
+  WebSite node. What it can't know is what this product is, so the
+  Organization, SoftwareApplication, FAQPage and HowTo nodes stay hand-written
+  here. JSON-LD in the body is read by search engines the same as in the head.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url }}/#org",
+      "name": "AdultXBlocker",
+      "url": "{{ site.url }}/",
+      "logo": "{{ site.url }}{{ site.logo }}",
+      "email": "{{ site.email }}",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "{{ site.email }}",
+        "contactType": "customer support",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "{{ site.url }}/#extension",
+      "name": "AdultXBlocker for Chrome",
+      "description": "Sets up and locks iOS Screen Time from your browser, and keeps an encrypted backup of every passcode it generates.",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome",
+      "softwareVersion": "{{ site.extension_version }}",
+      "url": "{{ site.store_url }}",
+      "downloadUrl": "{{ site.store_url }}",
+      "publisher": { "@id": "{{ site.url }}/#org" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ site.url }}/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens if I lose the passcode?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You never had it. It is generated, encrypted, and backed up to your account before it is shown, and it is only ever shown one keypad tap at a time. Recovering it is a normal, expected thing to do — not an emergency." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AdultXBlocker work on Android or Windows?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not today. AdultXBlocker walks you through iOS Screen Time, so the device being locked is an iPhone or iPad. The extension itself runs in Chrome on any desktop." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I close the popup halfway through setup?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Chrome destroys extension popups whenever they lose focus, so the setup is cached and picks up where it left off. A device left mid-setup shows as Pending in your list and can be resumed days later." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an account?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — a verified email and password. That account is what the encrypted passcode backup belongs to, and it is what lets you see your devices from a different computer." }
+        },
+        {
+          "@type": "Question",
+          "name": "What data does the extension collect?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The extension requests one Chrome permission: storage. It does not request your tabs, browsing history, Google Drive, or access to your files." }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "{{ site.url }}/#howto",
+      "name": "How to block adult content on an iPhone with AdultXBlocker",
+      "totalTime": "PT5M",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Pick your days", "text": "Choose how long the block stays on. The clock starts the moment the device actually locks, not when you begin setting up." },
+        { "@type": "HowToStep", "position": 2, "name": "Let it generate a passcode you never see", "text": "The extension generates a random Screen Time passcode, encrypts it, and backs it up before showing you anything. It then plays the digits one keypad tap at a time over thirty seconds." },
+        { "@type": "HowToStep", "position": 3, "name": "Type it in and walk away", "text": "Screen Time restrictions go on and the passcode is gone from your screen. Return when the days are up and unlock the device from your device list." }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+// The one moving thing on the page, and the only one that earns it: the
+// product is a clock. Counts down from a fixed offset so the hero is never
+// showing a dead number.
+(function () {
+  var el = document.getElementById('clock');
+  if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var target = Date.now() + 20 * 864e5 + 23 * 36e5 + 14 * 6e4 + 7e3;
+  var pad = function (n) { return String(n).padStart(2, '0'); };
+  (function tick() {
+    var s = Math.max(0, Math.floor((target - Date.now()) / 1000));
+    var d = Math.floor(s / 86400); s %= 86400;
+    var h = Math.floor(s / 3600); s %= 3600;
+    var m = Math.floor(s / 60); s %= 60;
+    el.textContent = d + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's';
+    setTimeout(tick, 1000);
+  })();
+})();
+</script>
