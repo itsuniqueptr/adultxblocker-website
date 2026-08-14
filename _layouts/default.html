@@ -25,13 +25,12 @@
     </a>
     <ul class="nav-links">
       {%- comment -%}
-        Root-relative so the landing page's anchors still resolve from /docs/
-        and /blog/, where a bare "#how" would point at the current page.
+        Root-relative so the landing page's anchors still resolve from /docs/,
+        where a bare "#how" would point at the current page.
       {%- endcomment -%}
       <li><a href="{{ '/#how' | relative_url }}">How it works</a></li>
       <li><a href="{{ '/#products' | relative_url }}">Products</a></li>
       <li><a href="{{ '/docs/' | relative_url }}">Docs</a></li>
-      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
       <li><a href="mailto:{{ site.email }}">Contact</a></li>
     </ul>
     <a class="btn btn-sm nav-cta" href="{{ site.store_url }}" rel="noopener">Add to Chrome</a>
@@ -60,8 +59,6 @@
       <li><a href="{{ '/#how' | relative_url }}">How it works</a></li>
       <li><a href="{{ '/#products' | relative_url }}">Products</a></li>
       <li><a href="{{ '/docs/' | relative_url }}">Docs</a></li>
-      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-      <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
       <li><a href="mailto:{{ site.email }}">Contact</a></li>
     </ul>
   </div>

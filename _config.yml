@@ -30,20 +30,14 @@ extension_version: "1.4.0"
 twitter:
   card: summary_large_image
 
-permalink: /blog/:title/
-
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
 
 defaults:
   - scope: { path: "" }
     values:
       image: /assets/og.png
-  - scope: { path: "", type: posts }
-    values:
-      layout: post
 
 exclude:
   - README.md

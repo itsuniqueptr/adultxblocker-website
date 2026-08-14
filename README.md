@@ -10,36 +10,14 @@ _config.yml     site settings, and the single source of truth for the
 _layouts/
   default.html  <head>, nav, footer — every page
   docs.html     docs page: sticky TOC, FAQ accordion, FAQ structured data
-  post.html     a blog post
-index.html      landing page (single page — only Docs and Blog leave it)
+index.html      landing page (single page — only Docs leaves it)
 docs/index.md   the documentation, in Markdown
-blog/index.html post listing
-_posts/         one Markdown file per post
 styles.css      one stylesheet, all pages
 assets/         icon.png, og.png (social card), og.html (its source)
 robots.txt      allows everything, points at the sitemap
 ```
 
-`sitemap.xml` and `feed.xml` are **generated** — don't create them by hand.
-
-## Publishing a blog post
-
-Add one file. Nothing else.
-
-```
-_posts/2026-09-01-some-title.md
-
----
-title: "Some title"
-description: "One or two sentences. Used as the excerpt and the meta description."
-date: 2026-09-01
----
-
-Markdown from here down.
-```
-
-Push. The post page, the listing on `/blog/`, the sitemap entry, the RSS item,
-and the meta/OG/`BlogPosting` tags all appear on their own.
+`sitemap.xml` is **generated** — don't create it by hand.
 
 ## Editing the docs
 
