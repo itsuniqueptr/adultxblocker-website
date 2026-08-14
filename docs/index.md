@@ -37,11 +37,11 @@ faqs:
     a: >-
       The extension requests one Chrome permission: `storage`. It never asks for
       your tabs, your browsing history, Google Drive, or access to your files.
-  - q: Can I shorten a lock once it's running?
+  - q: Can I unlock a device before its time is up?
     a: >-
-      No. Extending a lock is always available; shortening one isn't, because a
-      lock you can shorten is a lock that stops working the moment you want it to
-      stop working.
+      Only by spending one of your three **rescue passes**. Three per account,
+      ever — they don't reset and can't be topped up. You can also switch rescue
+      off permanently, after which nothing opens a lock early.
   - q: Is there a paid plan?
     a: >-
       No. Every account is on the Free plan and there is nothing to buy.
@@ -141,13 +141,36 @@ What you can do to a device depends on its status:
 - **Pending** — setup was started but never confirmed. Resume it to finish, or
   start again.
 - **Locked, time remaining** — you can **extend** the lock. You cannot shorten
-  it, and you cannot unlock it early.
+  it. You can open it early only by spending a rescue pass, below.
 - **Locked, time elapsed** — you can now **extend** it again, or mark it
   **Unlocked** and retrieve the passcode.
 - **Unlocked** — the only status that can be marked **Deleted**.
 
 Extending is always available because adding time is never something you'll
-regret at 2am. Removing time is the one thing the product exists to prevent.
+regret at 2am.
+
+## Rescue passes
+
+A lock you genuinely cannot open is a lock that eventually traps someone for a
+real reason — a lost device, a family emergency, a mistake made while setting a
+duration. So there is a way out, and it is deliberately a small one.
+
+Every account gets **three rescue passes. Not three per device, not three per
+month — three, ever.** Spending one opens a still-locked device and returns its
+passcode.
+
+They do not come back. There is no way to buy, earn, or reset them, and asking
+us won't produce more — we haven't built the ability to grant any. When they're
+gone, every remaining lock on the account runs to its own end.
+
+You can also switch rescue off entirely for your account. That is **permanent**
+— there is no way to switch it back on, by you or by us. If you want a lock with
+no exit at all, that's the switch, and you should think about it before you touch
+it rather than after.
+
+A rescue pass is only spent on success. If a device's backup can't be read, or
+the request fails partway, you keep the pass. Retrying a rescue that already went
+through returns the same passcode and doesn't charge a second one.
 
 ## When the network is slow or gone
 
