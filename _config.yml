@@ -8,16 +8,16 @@ description: >-
   passcode you never see, backed up encrypted. Choose how many days the block
   stays on — until they're up, it stays on.
 # --- Where the site lives -------------------------------------------------
-# Currently a GitHub Pages project site, which serves from a sub-path. baseurl
-# must match the repo name or every stylesheet and link 404s.
+# Custom domain, served from the root. The CNAME file and the Sitemap line in
+# robots.txt must agree with this. Nothing else references the domain.
 #
-# To switch to the custom domain, set these two lines to:
-#     url: https://adultxblocker.com
-#     baseurl: ""
-# then re-create the CNAME file containing `adultxblocker.com` and update the
-# Sitemap line in robots.txt. Nothing else references the domain.
-url: https://itsuniqueptr.github.io
-baseurl: "/adultxblocker-website"
+# To revert to the bare GitHub Pages project site, set these back to:
+#     url: https://itsuniqueptr.github.io
+#     baseurl: "/adultxblocker-website"
+# and delete CNAME — a project site serves from a sub-path, so a non-empty
+# baseurl is what keeps every stylesheet and link from 404ing there.
+url: https://adultxblocker.com
+baseurl: ""
 lang: en
 logo: /assets/icon.png
 email: hello@adultXBlocker.com
